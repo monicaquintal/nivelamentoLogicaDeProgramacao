@@ -5,7 +5,7 @@ FIAP
 
 </div>
 
-## 📚 Capítulo 1: Lógica de Programação - Introdução
+## 📚 Capítulo 1: Introdução
 
 ### 1. “Tecnologia":
 - “tekhene”, que significa “Técnica, arteeofício” + “logia”, que significa “estudo”.
@@ -56,3 +56,8 @@ B) Fluxograma:
 - seu objetivo é o de desenhar a ideia do algoritmo, mostrando assim o fluxo (sentido) dado entre os processos.
 - é a forma de representação gráfica dos passos do algoritmo através de figuras que representam estas ações. Nesta forma de representação do algoritmo usamos regras para cada uma das figuras/instruções.
 
+<hr>
+
+## 📚 Capítulo 2: Entrada e saída de dados
+
+### 1.

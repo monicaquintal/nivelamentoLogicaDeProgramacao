@@ -87,7 +87,7 @@ Cada linguagem de programação trata estes comandos de uma forma diferente, com
 - Código-fonte: o arquivo texto onde escrevemos os programas
 - Comentário: texto inserido dentro do  código-fonte  que seja  um  auxílio para o entendimento das instruções. O compilador o ignora!!
 
-    A) Pseudocódigo:
+A) Pseudocódigo:
 
 Sintaxe:
 Escreva &lt;expressão&gt;
@@ -105,7 +105,7 @@ Escreva 12
 Fim 
 ~~~
 
-    B) Python:
+B) Python:
 
 Sintaxe:
 print(&lt;expressão&gt;)
@@ -139,7 +139,7 @@ print("2. O meu nome é {n} tenho {i} anos e {a} centímetros de altura".format(
 print(f"3. O meu nome é {nome} tenho {idade} anos e {altura} centímetros de altura")
 ~~~
 
-    C) Java:
+C) Java:
 
 Sintaxe:
 System.out.println(&lt;expressão&gt;);
@@ -349,3 +349,27 @@ Início
   Escreva “Média = “, media
 Fim
 ~~~
+
+<hr>
+
+## 📚 Capítulo 3: Desvios Condicionais
+
+### 1. Introdução:
+
+Tipos de comandos:
+
+- comandos simples (Primitivos): são sequenciais e ocupam apenas uma linha, ou seja, executam o algoritmo na sequência em que os comandos aparecem.
+
+- comandos estruturados: desviam o fluxo do algoritmo, fazendo com que as instruções não sejam executadas necessariamente na sequência. Todos os comandos estruturados têm um início e fim próprio (como SE e FIM_SE). O  fluxo das instruções a serem seguidas são escolhidas de acordo com o resultado da avaliação das condições!
+
+Há duas classificações da estrutura de desvio condicional: 
+
+- Decisão:
+  - Desvio simples: SE ENTÃO
+  - Desvio composto: SE ENTÃO SENÃO
+  - Desvio encadeado
+- Escolha
+
+### 2. Desvio simples:
+
+A) Comando  de  decisão  SE ENTÃO: utilizado para analisar uma condição e executar um determinado &lt;bloco de comandos&gt; caso a condição seja verdadeira, senão nada será executado.

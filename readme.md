@@ -429,3 +429,107 @@ Há duas classificações da estrutura de desvio condicional:
 ### 2. Desvio simples:
 
 A) Comando  de  decisão  SE ENTÃO: utilizado para analisar uma condição e executar um determinado &lt;bloco de comandos&gt; caso a condição seja verdadeira, senão nada será executado.
+
+Representação no fluxograma:
+
+![Representação da estrutura condicional If no Fluxograma](./imagens/if.png)
+
+> Condição é uma expressão que retorne um valor lógico. Ela funciona como uma pergunta, onde uma resposta lógica  (V ou F) determinará o andamento do fluxo. A condição é uma expressão composta por três partes: variável operador_relacional variável_ou_valor.
+
+Representação:
+Observação sobre o &lt;bloco verdade&gt;: é executado caso a condição resulte verdade.
+
+A) Pseudocódigo:
+
+~~~
+Sintaxe: 
+Se <condição> então
+  <bloco verdade>
+Fim_se
+~~~
+
+B) Python:
+
+~~~python
+Sintaxe:
+if <condição>:
+  <bloco verdade>
+~~~
+
+C) Java:
+
+~~~java
+Sintaxe:
+if (condição)
+{
+  <bloco verdade>;
+}
+~~~
+
+B) OPeradores relacionais:
+
+![Operadores relacionais](./imagens/operadores-relacionais.png)
+
+C) Conceito de bloco:
+
+loco é um conjunto de instruções (comandos) que é isolado pelo programador dos demais comandos por atender um objetivo em comum.
+
+Cada linguagem de programação tem uma forma diferente de separar e gerenciar os blocos:
+
+- Pseudocódigo: Não há um caractere ou palavra específica para delimitar o bloco. O Pseudocódigo geralmente utiliza o Fim_(nome do comando).
+
+- Python:entende o bloco por meio da identação (neologismo derivado da palavra inglesa identation, que significa  recuo), em outros termos, as instruções sequenciais na mesma coluna estão no mesmo bloco.
+  - Identação é uma técnica de edição de código-fonte importante em todas as linguagens de programaçã, por  organizar o código-fonte e tornar mais fácil a identificação de um erro de compilação.
+
+- Java: entende como bloco todas as instruções que estão entre chaves ({bloco}).
+
+### 3. Desvio composto:
+
+O desvio composto tem tanto o &lt;bloco verdadeiro&gt; quanto o &lt;bloco falso&gt;! 
+
+O comando SE ENTÃO SENÃO é utilizado quando o desvio for composto por dois blocos, o verdadeiroe o falso - é uma bifurcação: um de dois caminhos é seguido a partir da resposta de uma condição pré-estabelecida (depois da palavra SE); caso a condição resulte verdade, será executado o &lt;bloco verdade&gt; (que é representado pelo ENTÃO),  caso contrário será executado o &lt;bloco falso&gt; (representado pelo SENÃO).
+
+No fluxograma:
+
+![Estrutura if-else](./imagens/if-else.png)
+
+Sintaxes:
+
+A) Pseudocódigo:
+
+~~~
+Se <condição> então
+  <blocoverdadeiro>
+Senão
+  <blocofalso>
+Fim_se
+~~~
+
+B) Python
+
+~~~python
+if <condição>:
+  <bloco Verdadeiro>
+else:
+  <bloco Falso>
+~~~
+
+C) Java
+
+~~~java
+if (condição)
+{
+  <blocoverdadeiro>;
+}
+else
+{
+  <blocofalso>;
+}
+~~~
+
+### 4. Desvio encadeado:
+
+É uma sequência de testes de seleção, os quais serão executados ou não de acordo com o resultado das condições e com o encadeamento dos testes.
+
+Um teste de seleção pode ter dois conjuntos de instruções, um para o resultado verdadeiro e outro para o falso, porém esses conjuntos podem conter outros testes de seleção, que por sua vez, também podem conter outros e assim por diante.
+

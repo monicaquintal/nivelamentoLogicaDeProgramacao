@@ -327,7 +327,7 @@ Outras formas de utilizar o método next para outros tipos de dados:
 
 5. De-para: pseudocódigo para Java e Python
 
-Exemplo 1:
+**Exemplo 1:**
 
 Dados quatro (4) números pelo usuário, fazer um algoritmo que calcule a média simples destes números.
 
@@ -347,6 +347,62 @@ Início
   Media = (n1 + n2 + n3 + n4) / 4
   // Calcula a média dos 4 números
   Escreva “Média = “, media
+Fim
+~~~
+
+Observação: no arquivo .py, na  leitura  do  n1, ele  está  recebendo  o  input(),  na  linha  de  baixo  o  n1  é convertido  para  float e  jogado  nele  mesmo.  Nas  próximas  variáveis  estes  dois processos são feitos na mesma linha. O input() pega o dado fornecido pelo usuário e sempre o retorna no tipo string. Caso queira o dado em outro tipo, faça o Casting!
+
+**Exemplo 2:**
+
+Dado o preço do maçode cigarros, a quantidade de maços consumidos por dia e o tempo em anos que a pessoa fuma, calcular quanto esta pessoa já gastou fumando. 
+
+~~~
+Programaexemplo2
+Var
+  preco_maco, qtd_maco, anos, dias_fumante, custo: real
+Início  
+  // Solicitar os dados ao usuário
+  Escreva “Digite o preço do maço:”
+  Leia preco_maco
+  Escreva “Digite a quantidade de maços:”
+  Leia qtd_maco
+  Escreva “Digite a qtd. de anos que fuma:”
+  Leia anos
+  // calcula a qtd. de dias como fumante
+  dias_fumante = anos * 365
+  // calcula a qtd. de dias como fumante 
+  dias_fumante = anos * 365
+  // calcula o gasto do tempo que fuma
+  custo = dias_fumante * preco_maco
+  // Exibe o custo
+  Escreva “Você já gastou R$ “, custo, ”Fumando”
+Fim
+~~~
+
+**Exemplo 3:**
+
+Dada uma quantia (considere que já seja múltiplo de 10), fazer um algoritmo que calcule quantas cédulas de 10, 20 e 50 são necessárias para compor esta quantia.
+
+~~~
+Programaexemplo3
+Var
+  ced10, ced20, ced50: inteiro
+Início  
+  /*Solicita a quantia*/
+  Escreva “Digite a quantia:”
+  Leia quantia
+  /*Efetua os cálculos das quantias de cédulas */
+  ced50 = quantia // 50
+  quantia = quantia % 50
+  ced20 = quantia // 20
+  quantia = quantia % 20
+  ced10 = quantia // 10
+  quantia = quantia % 10
+  /*Exibe as quantidades de cédulas */
+  Escreva “Quantidade das cédulas: “
+  Escreva “Cédulas de 50 = “, ced50
+  Escreva “Cédulas de 50 = “, ced20
+  Escreva “Cédulas de 50 = “, ced10
 Fim
 ~~~
 

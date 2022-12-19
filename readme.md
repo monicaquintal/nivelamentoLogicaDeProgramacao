@@ -428,7 +428,7 @@ Há duas classificações da estrutura de desvio condicional:
 
 ### 2. Desvio simples:
 
-A) Comando  de  decisão  SE ENTÃO: utilizado para analisar uma condição e executar um determinado &lt;bloco de comandos&gt; caso a condição seja verdadeira, senão nada será executado.
+**Comando  de  decisão  SE ENTÃO:** utilizado para analisar uma condição e executar um determinado &lt;bloco de comandos&gt; caso a condição seja verdadeira, senão nada será executado.
 
 Representação no fluxograma:
 
@@ -466,11 +466,11 @@ if (condição)
 }
 ~~~
 
-B) OPeradores relacionais:
+**Operadores relacionais:**
 
 ![Operadores relacionais](./imagens/operadores-relacionais.png)
 
-C) Conceito de bloco:
+**Conceito de bloco:**
 
 loco é um conjunto de instruções (comandos) que é isolado pelo programador dos demais comandos por atender um objetivo em comum.
 
@@ -482,6 +482,27 @@ Cada linguagem de programação tem uma forma diferente de separar e gerenciar o
   - Identação é uma técnica de edição de código-fonte importante em todas as linguagens de programaçã, por  organizar o código-fonte e tornar mais fácil a identificação de um erro de compilação.
 
 - Java: entende como bloco todas as instruções que estão entre chaves ({bloco}).
+
+**Exemplo:** conceito de decisão simples (SE ENTÃO)
+
+Fazer um algoritmo que solicite um número ao usuário e exiba o seu módulo matemático (obs.: módulo matemático é tornar um número positivo. Se ele for, continua, senão passa a ser).
+
+~~~
+Programa exibir_numero_positivo
+Var
+  n: inteiro
+Início  
+  // exibe “Solicita um número para o usuário”
+  Escreva “Digite um número:”
+  Leia n
+  // Comando de decisão: Verifica se o número é negativo
+  Se n < 0 então
+    n = n * -1
+  Fim_se
+  //Exibeo número positivo
+  Escreva “Módulo:”, n
+Fim
+~~~
 
 ### 3. Desvio composto:
 
@@ -527,9 +548,273 @@ else
 }
 ~~~
 
+
+**Exemplo:** exemplo de desvio composto (SE ENTÃO SENÃO)
+
+Solicitar ao usuário a sua idade e exibir mensagem “Maior de idade” caso a idade seja maior ou igual a 18 anos ou “Menor de idade” caso contrário.
+
+Pseudocódigo:
+~~~
+Programa desvio_composto
+Var
+  idade: inteiro
+Início
+  // Solicita a idade do usuário
+  Escreva “Digite sua idade:”
+  Leia idade
+  // Desvio composto exibe mensagem “Maior de idade” quando a idade for maior ou igual a 18 anos e “Menor de idade” caso contrário
+  Se idade >= 18 então
+    Escreva “Maior de idade”
+  Senão 
+    Escreva “Menor de idade”
+  Fim_se
+Fim
+~~~
+
+
 ### 4. Desvio encadeado:
 
-É uma sequência de testes de seleção, os quais serão executados ou não de acordo com o resultado das condições e com o encadeamento dos testes.
+> Importante: Operadores lógicos
+![Operadores lógicos](./imagens/operadores-logicos.png)
+
+
+**Desvio encadeado:** É uma sequência de testes de seleção, os quais serão executados ou não de acordo com o resultado das condições e com o encadeamento dos testes.
 
 Um teste de seleção pode ter dois conjuntos de instruções, um para o resultado verdadeiro e outro para o falso, porém esses conjuntos podem conter outros testes de seleção, que por sua vez, também podem conter outros e assim por diante.
 
+Representação:
+
+![Estrutura Se Encadeado](./imagens/se-encadeado.png)
+
+Ou seja, denominamos SE ENCADEADO em situações em que há um comando de decisão – não importa se é o SE ENTÃO ou SE ENTÃO SENÃO – dentro do outro!!!
+
+Sintaxe:
+
+A) Pseudocódigo:
+
+~~~
+Se <condição 1> então 
+  <blocode instruções 1>
+Senão 
+  Se <condição 2>então
+    <bloco de instruções 2>
+  Senão 
+    Se <condicao3> então 
+      <bloco de instruções 3>
+    Senão
+      <bloco de instruções N>
+    Fim_se
+  Fim_se
+Fim_se
+~~~
+
+Também podemos escrever da seguinte forma:
+
+~~~
+Se <condição 1> então
+  <bloco de instruções 1>
+Senão Se <condição 2> então 
+  <bloco de instruções 2>
+Senão Se <condicao3> então 
+  <bloco de instruções 3>
+Senão
+  <bloco de instruções N>
+Fim_se
+~~~
+
+B) Python:
+
+~~~python
+if <condição 1>:
+  <bloco de instruções 1>
+else:
+  if <condição 2>:
+    <bloco de instruções 2>
+  else: 
+    if <condicao3>:
+      <bloco de instruções 3>
+    else<bloco de instruções N>
+~~~
+
+Ou podemos escrever:
+
+~~~python
+if <condição 1>:
+  <bloco de instruções 1>
+elif <condição 2>:
+  <bloco de instruções 2>
+elif <condicao3>:
+  <bloco de instruções 3>
+else<bloco de instruções N>
+~~~
+
+Em Python, o “elif” abrevia o encadeamento dos else if’s, tornando a sua estrutura mais legível.
+
+
+C) Java:
+
+~~~java
+if (condição1) 
+{
+  <expressão>;
+}
+else
+{
+  if(condicao2)
+  {
+    <expressão2>;
+  }
+  else 
+  {
+    if(condicao3)
+    {
+      <expressão3>;
+    }
+    else
+    {
+      <expressão_n>;
+    }
+    }
+  }
+~~~
+
+Ou podemos escrever:
+
+~~~java
+if (condição1)
+  <expressão>;
+else if (condicao2)
+  <expressão2>;
+else if (condicao3)
+  <expressão3>;
+else<expressãoN>;
+~~~
+
+**Exemplo:** SE ENCADEADO
+
+Solicitar um número ao usuário. A partir do número, exibir o dia da semana correspondente.
+
+Pseudocódigo:
+~~~
+Programa exemplo1
+Var
+  n: inteiro
+Início  
+  // Solicita um número ao usuário
+  Escreva “Digite um número:”
+  Leia n
+  // Compara o n aos valores possíveis
+  Se(n==1)então
+    Escreva “Domingo “
+  Senão se(n==2) então
+    Escreva “Segunda-feira“
+  Senão se(n==3) então
+    Escreva “Terça-feira “
+  Senão se(n==4) então
+    Escreva “Quarta-feira “
+  Senão se(n==5) então
+    Escreva “Quinta-feira “
+  Senão se(n==6) então
+    Escreva “Sexta-feira “
+  Senão se(n==7) então
+    Escreva “Sábado “
+  Senão 
+    Escreva “Dia inválido “
+  Fim_Se
+Fim
+~~~
+
+### 5. Escolha:
+
+Similar ao SE ENCADEADO por verificar diversas possibilidades  de  execução. 
+
+- A *desvantagem* é da Escolha só  comparar equivalência (igual a), enquanto o SE ENCADEADO pode utilizar qualquer operador lógico  ou  relacional(>,  <, and...). 
+- A *vantagem* é a de fechar apenas uma vez, independente da quantidade de caminhos (no SE, para cada SE há um FIM_SE).
+
+A estrutura de decisão ESCOLHA testa o valor contido em um identificador (que pode ser uma variável ou um cálculo inteiro) colocada entre parênteses, e o compara com valores fornecidos em cada caso.
+
+Fluxograma:
+
+![Escolha](./imagens/escolha.png)
+
+Sintaxe:
+
+A) Pseudocódigo:
+
+~~~
+Escolha(<identificador>)
+  Caso <valor1>:
+    <comandos 1>
+  Caso <valor2>:
+    <comandos2>
+  Caso <valor3>:
+    <comandos3>
+  Caso <valor4>:
+    <comandos4>
+  Outrocaso:
+    <outros comandos>
+Fim_Escolha
+~~~
+
+B) Python:
+
+**EM PYTHON NÃO EXISTE A ESTRUTURA “ESCOLHA” , MAS PODE SER SIMULADA COM O SE ENCADEADO (IF ELIF) QUE UTILIZE  APENAS EQUIVALENCIA (==) COMO OPERADOR.**
+
+C) Java:
+
+~~~java
+switch (<identificador>)
+{
+  case <valor1>:
+    <comandos 1>;
+    [break;]
+  case <valor1>:
+    <comandos 1>;
+    [break;]
+  case <valor1>:
+    <comandos 1>;
+    [break;]
+  case <valor1>:
+    <comandos 1>;
+    [break;]
+  default:
+    <comandos default>
+}
+~~~
+
+Em Java, o comando break força a saída da estrutura. Caso o break não seja colocado, assim que o fluxo entrar em um case, todos as linhas subsequentes serão executadas até o final da estrutura.
+
+**Exemplo:** ESCOLHA
+
+Solicitar um número ao usuário. A partir do número, exibir o dia da semana correspondente.
+
+Pseudocódigo:
+~~~
+Programa exemplo_escolha
+Var
+  n: inteiro
+Início
+  // Solicita um número ao usuário
+  Escreva “Digite umnúmero:”
+  Leia n
+  // Compara o n aos valores possíveis
+  Escolha(n)
+    Caso 1:
+      Escreva “Domingo”
+    Caso 2:
+      Escreva “Segunda-feira”
+    Caso 3:
+      Escreva “Terça=feira”
+    Caso 4:
+      Escreva “Quarta-feira”
+    Caso 5:
+      Escreva “Quinta-feira”
+    Caso 6:
+      Escreva “Sexta-feira”
+    Caso 7:
+      Escreva “Sábado”
+    Outrocaso:
+    Escreva “Dia inválido”
+  Fim_Escolha
+Fim
+~~~

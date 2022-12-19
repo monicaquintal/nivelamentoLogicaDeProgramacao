@@ -818,3 +818,92 @@ Início
   Fim_Escolha
 Fim
 ~~~
+
+### 6. Exercícios:
+
+1) Calculadora:
+
+Dados dois números inteiros e uma operação aritmética desejada, calcule a resposta adequada: Utilize os símbolos a seguir para ler qual a operação escolhida:+ soma, -subtração, * multiplicação, / divisão.
+
+Pseudocódigo
+~~~
+Programa operacao_aritmetica
+Var
+  numero1, numero2, resultado: real
+  operador: caractere
+Início  
+  // Solicitar os dados ao usuário
+  Escreva “Digite o primeiro número:”
+  Leia numero1
+  Escreva “Digite o segundo número:”
+  Leia numero2
+  Escreva “Digite a operação desejada (+ -* /):”
+  Leia operador
+  // Verifica a operação desejada
+  Escolha (operador)
+    caso ‘+’:
+      resultado = numero1 + numero2
+      Escreva “Soma = “, resultado
+    caso ‘-’:
+      resultado = numero1 -numero2
+      Escreva “Subtração = “, resultado
+    caso ‘*’:
+      resultado = numero1 * numero2
+      Escreva “Multiplicação = “, resultado
+    caso ‘/’:
+      Se numero2 == 0 então
+        Escreva “Não há divisão por zero”
+      Senão
+        resultado = numero1 / numero2
+        Escreva “Divisão = “, resultado
+      Fim_se
+    caso contrário:
+      Escreva “Operador inválido” 
+  Fim_Escolha
+Fim
+~~~
+
+2) Rodízio:
+
+Dada a parte numérica da placa de um automóvel, fazer um algoritmo que exiba o dia do rodízio.
+Considere a regra de São Paulo. Para veículos com final da placa:
+- 1 e 2: rodízio é segunda-feira;
+- 3 e 4: terça-feira;
+- 5 e 6: quarta-feira;
+- 7 e 8: quinta-feira;
+- 9 e 0: sexta-feira.
+
+Pseudocódigo:
+
+~~~
+Programa exemplo2
+Var
+  numeroPlaca, finalPlaca: inteiro
+Início  
+  /*Solicita a placa do veículo*/
+  Escreva “Digite o número da placa do veículo:”
+  Leia numeroPlaca
+  /*Efetua o cálculo para saber o último número*/
+  finalPlaca = numeroPlaca % 10
+  /*Verifica o final da placa com o comando Escolha e exibe o dia da semana do rodízio*/
+  Escolha (finalPlaca)
+    caso 1:
+    caso 2:
+      Escreva “Segunda-feira“
+    caso 3:
+    caso 4:
+      Escreva “Terça-feira“
+    caso 5:
+    caso 6:
+      Escreva “Quarta-feira“
+    caso 7:
+    caso 8:
+      Escreva “Quinta-feira“
+    caso 9:
+    caso 0:
+      Escreva “Sexta-feira”
+  Fim_Escolha
+Fim
+~~~
+
+PÁG 34

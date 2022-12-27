@@ -906,4 +906,67 @@ Início
 Fim
 ~~~
 
-PÁG 34
+3) Positivo/Negativo/Nulo
+
+Dado um número pelo usuário, informar se ele é positivo, negativo ou nulo.
+
+Pseudocódigo:
+
+~~~
+Programa exemplo
+Var
+  n: inteiro
+Início 
+  Escreva “Digite um número: ”
+  Leia n
+  Se n > 0 então
+    Escreva “Positivo”
+  Senão
+    Se n < 0 então
+      Escreva “Negativo”
+    Senão
+      Escreva “Nulo”
+    Fim_se
+  Fim_se
+Fim
+~~~
+
+4) Maior 3 números
+
+Dados três números, exibir o de maior valor.
+
+Pseudocódigo:
+~~~
+Programa exemplo
+Var
+  n1, n2, n3, maior: inteiro
+Início 
+  Escreva “Digite 3 números: ”
+  Leia n1
+  Leia n2
+  Leia n3
+  maior = n1
+  Se n2 > maior então
+    maior = n2
+  Fim_se
+  Se n3 > maior então
+    maior = n3
+  Fim_se
+  Escreva “Maior número: “, maior
+Fim
+~~~
+
+<hr>
+
+## 📚 Capítulo 4: Laços de repetição
+
+**Estruturas de repetição** são comandos conhecidos como Looping  e  Laços - apelido que se 
+ dá pelo fato de iniciar e terminar no mesmo ponto, e a sua “volta” envolver o bloco de repetição!
+
+ Utilizamos esta instrução toda vez que percebemos que no algoritmo há um trecho de instruções que implicam repetições.
+
+ Há 3 tipos de laços:
+
+ - Laços pré-condicional: enquanto-faça;
+ - laços pós-condicional: faça-enquanto;
+ - laço contador: para.

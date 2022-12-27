@@ -3,9 +3,18 @@
 # Nivelamento: Lógica de Programação
 FIAP
 
+<a href="#cap01">Capítulo 1: Introdução</a>
+<a href="#cap02">Capítulo 2: Entrada e Saída de Dados</a>
+<a href="#cap03">Capítulo 3: Desvios Condicionais</a>
+<a href="#cap04">Capítulo 4: Laços de repetição</a>
+<a href="#cap05">Capítulo 5: </a>
+<a href="#cap06">Capítulo 6: </a>
+
 </div>
 
-## 📚 Capítulo 1: Introdução
+<div id="cap01" align="center">
+<h2>📚 Capítulo 1: Introdução</h2>
+</div>
 
 ### 1. “Tecnologia":
 - “tekhene”, que significa “Técnica, arteeofício” + “logia”, que significa “estudo”.
@@ -58,7 +67,9 @@ B) Fluxograma:
 
 <hr>
 
-## 📚 Capítulo 2: Entrada e Saída de Dados
+<div id="cap02" align="center">
+<h2>📚 Capítulo 2: Entrada e Saída de Dados</h2>
+</div>
 
 ### 1. Introdução:
 
@@ -221,7 +232,7 @@ Sintaxe: Leia &lt;variável&gt;
 ~~~
 Programa entrada_de_dados_e_variaveis
 Var
- Salario: rea
+ Salario: real
 Inicio  
  // Solicita o salário ao usuário
  Escreva “Digite o seu salário:”
@@ -408,7 +419,9 @@ Fim
 
 <hr>
 
-## 📚 Capítulo 3: Desvios Condicionais
+<div id="cap03" align="center">
+<h2>📚 Capítulo 3: Desvios Condicionais</h2>
+</div>
 
 ### 1. Introdução:
 
@@ -958,15 +971,205 @@ Fim
 
 <hr>
 
-## 📚 Capítulo 4: Laços de repetição
+<div id="cap04" align="center">
+<h2>📚 Capítulo 4: Laços de repetição</h2>
+</div>
 
-**Estruturas de repetição** são comandos conhecidos como Looping  e  Laços - apelido que se 
- dá pelo fato de iniciar e terminar no mesmo ponto, e a sua “volta” envolver o bloco de repetição!
+**Estruturas de repetição** são comandos conhecidos como Looping  e  Laços - apelido que se dá pelo fato de iniciar e terminar no mesmo ponto, e a sua “volta” envolver o bloco de repetição!
 
- Utilizamos esta instrução toda vez que percebemos que no algoritmo há um trecho de instruções que implicam repetições.
+Utilizamos esta instrução toda vez que percebemos que no algoritmo há um trecho de instruções que implicam repetições.
 
- Há 3 tipos de laços:
+Há 3 tipos de laços:
 
  - Laços pré-condicional: enquanto-faça;
  - laços pós-condicional: faça-enquanto;
  - laço contador: para.
+
+### 1. Laço Enquanto-Faça
+
+É conhecido como Laço Pré-Condicional: primeiro é analisada uma condição, e depois é executado o Bloco de comandos envolvidos pelo laço, ou seja, que serão repetidos.
+
+É o **laço “0,N”**, no qual pode ocorrer de não executar nenhuma volta (zero) ou várias (N); é o laço que tem a característica de primeiro analisar e depois executar.
+
+***Sintaxe:***
+
+A) Pseudocódigo: 
+
+~~~
+Enquanto <condição> faça
+  <Bloco de repetição>
+Fim_Enquanto
+~~~
+
+B) Python:
+
+~~~python
+while <condição>: 
+  <Bloco de repetição>
+~~~
+
+C) Java:
+
+~~~java
+while (<condição>)
+{
+  <Bloco de repetição>;
+}
+~~~
+
+***Funcionamento:***
+
+- "Enquanto &lt;condição&gt; faça" é o início do laço; caso a condição resulte verdade, o fluxo do algoritmo entra no laço.
+- Uma vez dentro do laço, o &lt;Bloco  de  repetição&gt; é executado. Lembre-se que bloco de repetição são os comandos que serão repetidos.
+- Ao chegar no Fim_enquanto, ele retorna ao início do laço. Chegando no início, analisa-se novamente a condição e enquanto ela resultar verdade, o laço é executado (&lt;Bloco  de  repetição&gt;)novamente. Quando a condição resultar Falso, o fluxo do algoritmo prossegue depois da linha Fim_enquanto.
+
+***Exemplo:***
+
+Fazer um algoritmo que leia e some diversos números dados pelo usuário. Quando o usuário digitar 0 (zero), finaliza o algoritmo. No final, exibir a soma resultante.
+
+Pseudocódigo:
+~~~
+Programa exemplo1_enquanto_faça
+Var
+  num, soma: real
+Início
+  Escreva “Digite 0 para finalizar”
+  /* zera a variável que acumula a soma */
+  soma = 0
+  /* para entrar no laço a primeira vez */
+  num = 1 
+  /* início do laço Enquanto-Faça */
+  Enquanto num != 0 faça
+    /* Bloco de repetição*/
+    Escreva “Digite um número: “
+    Leia num
+    soma = soma + num
+  Fim_Enquanto
+  /* fluxo depois do final do laço*/
+  Escreva “Somatória = “, soma
+Fim
+~~~
+
+Python:
+~~~python
+print("Digite 0 para finalizar")
+
+# zera a variável que acumula a soma
+soma = 0
+
+# para entrar no laço a primeira vez
+num = 1
+
+# início do laço Enquanto-Faça
+while num != 0:
+# Bloco de repetição
+    num = float(input("Digite um número: "))
+    soma = soma + num
+
+# fluxo depois do final do laço:
+# Exibir o valor da somatória
+print("Somatoria = ", soma)
+~~~
+
+Java:
+
+~~~java
+// Estancia o objeto Teclado para ler variáveis
+Scanner teclado = new Scanner(System.in);
+
+// Declaração das variáveis
+float salario, num = 1, soma = 0;
+
+System.out.println("Digite 0 para finalizar: ");
+
+while (num != 0) {
+    System.out.println("Digite um numero: ");        
+    num = teclado.nextFloat();
+    soma += num; // equivale à soma = soma + 1
+}
+
+// Exibe a somatória
+System.out.println("Somatória = " + soma);
+~~~
+
+### 2. Laço Faça-Enquanto
+
+É um Laço Pós-condicional (inverso do Enquanto-Faça), no qual primeiro é executado o Bloco de Repetição, e depois é analisada a condição. 
+
+Tem a característica de ser o **laço “1,N”**, ou seja, o laço executa o bloco de repetição ao menos uma (1) vez ou várias(N).
+
+***Sintaxe:***
+
+A) Pseudocódigo:
+
+~~~
+Faça 
+  <Bloco de repetição>
+Enquanto <condição>
+~~~
+
+B) Python:
+
+~~~python
+Esta estrutura de repetição não existe no Python!
+~~~
+
+C) Java:
+
+~~~java
+do
+{
+  <Bloco de repetição>;
+} while (<condição>);
+~~~
+
+***Funcionamento: ***
+
+- "faça" é o início do laço. Tudo que estiver a partir desta linha será executado incondicionalmente até chegar ao final do laço, onde há uma condição.
+- O &lt;Bloco de repetição&gt; é executado ao menos uma vez.
+- Ao chegar no "Enquanto &lt;condição&gt;", ele retorna ao início do laço (na linha faça), caso a condição resulte verdadeiro, executando novamente o &lt;Bloco de repetição&gt;.
+
+***Exemplo:***
+
+Em uma eleição, há três candidatos: 1 – Huguinho; 2 – Zezinho e 3 – Luizinho. Fazer um algoritmo que leia votos dados pelo usuário até que ele digite 0 (zero). Ao finalizar a votação, informar quantos votos cada candidato obteve.
+
+A) Pseudocódigo:
+~~~
+Programa exemplo1_faça_enquanto
+Var
+  hug, zez, lui, voto: inteiro
+Início
+  Escreva “Digite o voto ou 0 para finalizar”
+  /* zera as variáveis dos candidatos */
+  hug= 0 
+  zez = 0
+  lui = 0
+  /* Exibindo o menu com os candidatos */
+  Escreva “1 – Huguinho”
+  Escreva “2 – Zezinho”
+  Escreva “3 – Luizinho”
+  Escreva “0 – Terminar a votação”
+  /* início do laço Faça-Enquanto*/
+  faça
+    /* Bloco de repetição*/
+    Escreva “Digite o voto: “
+    Leia voto
+    Escolha (voto)
+      Caso 1
+        hug = hug + 1
+      Caso 2
+        zez = zez + 1
+      Caso 3
+        lui = lui + 1
+      Senão
+        Escreva “Voto inválido, digite: 1, 2 ou 3”
+    Fim_escolha
+  Enquanto voto != 0
+  /* Exibe a quantidade de votos de cada candidato*/
+  Escreva “1 – Huguinho: ”, hug, ”Votos” 
+  Escreva “2 – Zezinho: ”, zez, “Votos”
+  Escreva “3 – Luizinho”, lui, “Votos”
+Fim
+~~~
+
+página 15

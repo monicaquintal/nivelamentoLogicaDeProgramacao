@@ -3,11 +3,11 @@
 # Nivelamento: Lógica de Programação
 FIAP
 
-<a href="#cap01">Capítulo 1: Introdução</a>
-<a href="#cap02">Capítulo 2: Entrada e Saída de Dados</a>
-<a href="#cap03">Capítulo 3: Desvios Condicionais</a>
-<a href="#cap04">Capítulo 4: Laços de repetição</a>
-<a href="#cap05">Capítulo 5: </a>
+<a href="#cap01">Capítulo 1: Introdução</a> | 
+<a href="#cap02">Capítulo 2: Entrada e Saída de Dados</a> | 
+<a href="#cap03">Capítulo 3: Desvios Condicionais</a> | 
+<a href="#cap04">Capítulo 4: Laços de repetição</a> | 
+<a href="#cap05">Capítulo 5: </a> | 
 <a href="#cap06">Capítulo 6: </a>
 
 </div>
@@ -1172,4 +1172,147 @@ Início
 Fim
 ~~~
 
-página 15
+### 3. Laço Para
+
+Os dois laços anteriores (Enquanto-Faça e Faça-Enquanto) são conhecidos como Laços Condicionais - executam o bloco de repetição dependendo da resposta da condição inserida. Portanto, utilizamos os  laços condicionais em situações quando as voltas são indefinidas, ou seja, o controle das execuções está nas mãos do usuário.
+
+Há outro laço, chamado **“Laço Contador”**, empregado melhor em situações em que o programador sabe de antemão a quantidade de voltas que serão executadas. Ou seja, enquanto os dois primeiros laços são conhecidos por executarem voltas indefinidas, o laço Para é conhecido por ser mais bem utilizado em situações em que o número de voltas é previsto.
+
+***Sintaxe:***
+
+A) Pseudocódigo:
+
+~~~
+Para <contador> de <início> até <fim> inc <incremento> faça
+  <Bloco de repetição>
+Fim_para
+~~~
+
+Observação:
+- &lt;contador&gt;: variável inteira que armazena qual a volta atual.
+- &lt;início&gt;: valor que o contador assumirá quando as voltas se iniciarem.
+- &lt;fim&gt;: limite de voltas que o contador assumirá.
+- &lt;incremento&gt;: a cada volta, quanto o contador será acrescentado.
+- &lt;Bloco de repetição&gt;: rotina que será repetida.
+
+B) Python:
+
+~~~python
+for <contador> in range (<início>, <fim>, <incremento>):
+  <Bloco de repetição>
+~~~
+
+Observação: 
+- in range: in é um operador relacional e range é uma função que configura um intervalo. Ambos não são exclusivos do laço for, apenas o complementam.
+
+C) Java:
+
+~~~java
+for (<inicialização; <condição>; <incremento>)
+{
+  <Bloco de repetição>;
+}
+~~~
+
+***Exemplo***
+
+Dados 10 números pelo usuário, somá-los e, no final, exibir a somatória.
+
+Pseudocódigo:
+
+~~~
+Programa exemplo1_para
+Var
+  soma, i, n: real
+Início
+  soma = 0
+  Escreva “Digite 10 números”
+  /* Laço configurado para 10 voltas */
+  Para i de 1 até 10 inc 1 faça
+    Leia n
+    soma  = soma + n
+  Fim_para 
+  Escreva “Somatória = “, soma
+Fim
+~~~
+
+### Em resumo...
+
+Quando precisamos de uma condição para executar um laço, escolhemos o Enquanto-Faça ou o Faça-Enquanto; para decidir qual dos dois devemos  utilizar, perguntamos: “Este problema requer ao menos uma volta no laço?”. Se a resposta for Sim, escolhemos o Faça-Enquanto, senão, utilizamos o Enquanto-Faça. Agora, se o número de voltas é previsto na concepção do laço, seja por uma constante, seja por uma variável, utilizamos o laço contador Para.
+
+***Exercício 1:*** Enquanto-Faça
+
+Dado um número pelo usuário, calcular e exibir os dez primeiros múltiplos deste número.
+
+Pseudocódigo:
+
+~~~
+Programa exemplo1_enquanto_faça
+Var
+  num, mult, volta: real
+Início
+  Escreva “Digite um número”
+  Leia num
+  /* início da contagem das voltas em 1*/
+  volta = 1 
+  /* volta até 10 é a saída do laço */
+  Enquanto volta <= 10 faça
+    mult = num * volta
+    Escreva(mult)
+    /* Acrescenta 1 em volta para que não vire um laço Infinito */
+    Volta = volta + 1
+  Fim_Enquanto
+Fim
+~~~
+
+***Exercício 2:*** Faça-Enquanto
+
+Resolvendo o Exemplo 1 nas três linguagens com o comando Faça-Enquanto.
+Dado um número pelo usuário, calcular e exibir os dez primeiros múltiplos deste número.
+
+Pseudocódigo
+~~~
+Programa exemplo1_enquanto_faça
+Var
+  num, mult, volta: real
+Início
+  Escreva “Digite um número”
+  Leia num
+  /* início da contagem das voltas em 1*/
+  volta = 1 
+  /* volta até 10 é a saída do laço */
+  Faça
+    mult = num * volta
+    Escreva (mult)
+    /* Acrescenta 1 em volta para que não vire um laço Infinito */
+    volta = volta + 1
+  Enquanto volta <= 10 faça
+Fim
+~~~
+
+***Exercício 3:*** Para
+
+Resolvendo o Exemplo 1 nas três linguagens com o comando Para.
+Dado um número pelo usuário, calcular e exibir os dez primeiros múltiplos deste número.
+
+Pseudocódigo:
+
+~~~
+Programa exemplo1_para
+Var
+  num, mult, volta: real
+Início
+  Escreva “Digite um número”
+  Leia num
+  Para volta de 1 até 10 inc 1 faça
+    mult = num * volta
+    Escreva (mult)
+  Fim_para
+Fim
+~~~
+
+<hr>
+
+<div id="cap05" align="center">
+<h2>📚 Capítulo 5: </h2>
+</div>

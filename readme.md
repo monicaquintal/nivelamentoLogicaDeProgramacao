@@ -7,7 +7,7 @@ FIAP
 <a href="#cap02">Capítulo 2: Entrada e Saída de Dados</a> | 
 <a href="#cap03">Capítulo 3: Desvios Condicionais</a> | 
 <a href="#cap04">Capítulo 4: Laços de repetição</a> | 
-<a href="#cap05">Capítulo 5: </a> | 
+<a href="#cap05">Capítulo 5: Funçõoes, procedimentos, vetores e matrizes</a> | 
 <a href="#cap06">Capítulo 6: </a>
 
 </div>
@@ -1314,5 +1314,254 @@ Fim
 <hr>
 
 <div id="cap05" align="center">
-<h2>📚 Capítulo 5: </h2>
+<h2>📚 Capítulo 5: Funçõoes, procedimentos, vetores e matrizes.</h2>
 </div>
+
+
+<div align="center">
+
+Os oito comandos fundamentais em lógica de programação:
+![Oito comandos essenciais em Lógica de Programação.](./imagens/comandos-essenciais-logica.png)
+</div>
+
+### Subalgoritmos:
+
+Subalgoritmo é a quebra da resolução do problema (algoritmo) em problemas menores (subalgoritmos).
+
+Após definir os nomes dos subalgoritmos (utilizando nomes que tenham a ver como objetivo do bloco), o ideal (mas não obrigatório) é que os subalgoritmos sejam colocados em   arquivos separados para uma melhor organização dos códigos.
+
+O mecanismo de funcionamento desse conceito é o de, na chamada do subalgoritmo, o fluxo sair momentaneamente do programa  principal e executar o subalgoritmo em um arquivo externo, depois retornar para a própria linha ou para a próxima (isso depende de ser função e procedimento).
+
+### Procedimentos sem parâmetros:
+
+Subalgoritmos são representados por funções e procedimentos, com passagem de parâmetros ou não. Neste tópico,são abordados procedimentos sem parâmetros.
+
+Procedimento é um tipo de subalgoritmo que executa as instruções que compõem um objetivo e que não retorna valor ao programa chamador.
+
+***Exemplos:***
+
+- Para limpar a tela do console com Python, executar o comando clear, utilizando o procedimento/método system da biblioteca/objeto padrão os.
+
+~~~python
+import os
+os.system ('clear') or None
+~~~
+
+- instruções de Output em Python.
+
+~~~python
+print (“O print é um procedimento”)
+~~~
+
+***Sintaxe:***
+
+A) Pseudocódigo:
+
+~~~
+Procedimento <nome do procedimento> ()
+Inicio
+  <corpo do procedimento>
+Fim
+~~~
+
+B) Python:
+
+~~~python
+def <nome do Subalgoritmo> ():
+  corpo do procedimento
+~~~
+
+C) Java:
+
+~~~java
+public static void <nome do procedimento> () 
+{
+  <corpo do procedimento>;
+}
+~~~
+
+***Exemplo:***
+
+Criar um procedimento com o nome “saudacao" que, ao ser invocado, exiba na tela: “Olá Usuário, você está logado”. Depois de criar o procedimento, chamá-lo pelo programa principal.
+
+A) Pseudocódigo:
+
+~~~
+Procedimento saudacao()
+Início
+  Escreva “Olá usuário, você está logado”
+Fim 
+
+Programa testando_procedimento
+Início
+  saudacao();
+Fim
+~~~
+
+B) Python:
+
+~~~python
+# Criação do procedimento
+def saudacao():
+  print("Olá Usuário, você está logado")
+
+# Chamada do procedimento
+saudacao()
+~~~
+
+C) Java:
+
+~~~java
+// Criação do Procedimento
+public static void saudacao () {
+  System.out.println ("Olá Usuário, você está logado");
+  }
+
+// Chamadado Procedimento
+public static void main (String[]args) {
+  saudacao();
+}
+~~~
+
+### Procedimentos com parâmetros:
+
+Tem basicamente a mesma definição do sem parâmetros. A  diferença é que ele transposta valores do programa principal  (ou chamador) via parâmetro até o subalgoritmo que está na biblioteca.
+
+**Parâmetros** são informações passadas via chamada do subalgoritmo do programa principal para o subalgoritmo. Dentro do subalgoritmo, os parâmetros servem como variáveis.
+- importante: 
+    - A quantidade de parâmetros pode ser maior que um. 
+    - Os tipos dos parâmetros podem ser diferentes.
+
+***Sintaxe:***
+
+A) Pseudocódigo:
+
+~~~
+Procedimento <nome do procedimento> ([<parâmetros:tipos>])
+Início
+  <corpo do procedimento>
+Fim
+~~~ 
+
+B) Python:
+
+~~~python
+def <nome do Subalgoritmo> ([<parâmetros>]):
+  corpo do procedimento
+~~~
+
+C) Java:
+
+~~~java
+public static void <nome do procedimento> (<tipo> <parâmetros>) {
+  <corpo do procedimento>;
+}
+~~~
+
+Em Java, o que caracteriza um procedimento é o retorno do tipo void (vazio) por obviamente um procedimento não retornar valor.
+
+***Exemplo:***
+
+Criar um procedimento com o nome “saudacao2" que, ao ser invocado, exiba na tela: 
+“Olá &lt;nome do usuário&gt;, &lt;bom dia / tarde / noite&gt;!, você está logado!”. 
+As informações &lt;nome do usuário&gt; e &lt;hora&gt; serão passadas por parâmetro pelo procedimento.
+Depois de criar o procedimento, chame-o pelo programa principal.
+
+A) Pseudocódigo:
+
+~~~
+Procedimento saudacao2 (usuario: Texto, hora: inteiro)
+Var
+  msg: texto
+Início
+  Se hora < 12 então
+    msg = “Bom dia!”
+  senão se hora < 18 então
+    msg = “Boa tarde!”
+  senão
+    msg = “Boa noite!”
+  fim_se
+  Escreva “Olá”, usuário, ”,”, msg,”Você está logado!”
+Fim 
+
+Programa testando_procedimento
+Início
+  Saudacao2(“Edson”, 16);
+Fim
+~~~
+
+B) Python:
+
+~~~python
+# Criação do procedimento com parâmetros
+def saudacao2 (usuario, hora):
+  if hora < 12:
+    msg = "Bom dia!"
+  elif hora < 18:
+    msg = "Boa tarde!"
+  else:
+    msg = "Boa noite!"
+  print("Olá "+ usuario +", "+ msg +" Você está logado")
+  
+# Chamada do procedimento
+saudacao2("Edson", 16)
+~~~
+
+C) Java:
+
+~~~java
+// Criação do Procedimento
+public static void saudacao2 (String usuario, int hora) {
+  String msg;
+  
+  if (hora < 12) {
+    msg = "Bom dia!";
+  } else if (hora < 18) {
+    msg = "Boa tarde!";
+  } else {
+    msg = "Boa noite!";
+  }
+  
+  System.out.println ("Ola " + usuario + ", " + msg + " Você está logado.");
+  }
+
+// Chamada do Procedimento
+public static void main (String[]args) {
+  saudacao2("Edson",16);
+}
+~~~
+
+### Funções sem parâmetros:
+
+A mecânica de funcionamento de função e procedimento é quase idêntica, a diferença é que uma função retorna um valor do subalgoritmo (com o comando return) para o algoritmo que o chamou e este programa utiliza para algum fim este valor retornado.
+
+***Sintaxe:***
+
+A) Pseudocódigo:
+
+~~~
+Função <nome da função> (): <Tipo retorno>
+Inicio
+  <corpo da função>
+Fim
+~~~
+
+B) Python:
+
+~~~python
+def <nome da função> ():
+  corpo da função
+  return(<valor>)
+~~~
+
+C) Java:
+
+~~~java
+public static <tipo da função> <nome do procedimento> () {
+  <corpo do procedimento>;
+}
+~~~
+
+### Funções com parâmetros:
+
+página 23.

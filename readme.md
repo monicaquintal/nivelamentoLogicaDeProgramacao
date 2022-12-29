@@ -7,7 +7,7 @@ FIAP
 <a href="#cap02">Capítulo 2: Entrada e Saída de Dados</a> | 
 <a href="#cap03">Capítulo 3: Desvios Condicionais</a> | 
 <a href="#cap04">Capítulo 4: Laços de repetição</a> | 
-<a href="#cap05">Capítulo 5: Funçõoes, procedimentos, vetores e matrizes</a> | 
+<a href="#cap05">Capítulo 5: Funções, procedimentos, vetores e matrizes</a> | 
 <a href="#cap06">Capítulo 6: </a>
 
 </div>
@@ -1123,7 +1123,7 @@ do
 } while (<condição>);
 ~~~
 
-***Funcionamento: ***
+*** Funcionamento: ***
 
 - "faça" é o início do laço. Tudo que estiver a partir desta linha será executado incondicionalmente até chegar ao final do laço, onde há uma condição.
 - O &lt;Bloco de repetição&gt; é executado ao menos uma vez.
@@ -1314,7 +1314,7 @@ Fim
 <hr>
 
 <div id="cap05" align="center">
-<h2>📚 Capítulo 5: Funçõoes, procedimentos, vetores e matrizes.</h2>
+<h2>📚 Capítulo 5: Funções, procedimentos, vetores e matrizes.</h2>
 </div>
 
 
@@ -1564,4 +1564,465 @@ public static <tipo da função> <nome do procedimento> () {
 
 ### Funções com parâmetros:
 
-página 23.
+São as mais usuais; o objetivo é transportar informações do algoritmo para o subalgoritmo e poder utilizar o parâmetro como variável dentro da função.
+
+***Sintaxe:***
+
+A) Pseudocódigo:
+
+~~~
+Função <nome da função> ([<parâmetros:tipos>]):<Tipo retorno>
+Início
+  <corpo da função>
+Fim
+~~~
+
+B) Python:
+
+~~~python
+def <nome da função> ([<parâmetros>]):
+  corpo da função
+  return <valor>
+~~~
+
+C) Java:
+
+~~~java
+public static <tipo função> <nome da função> (<tipo> <parâmetros>) 
+{
+  <corpo da função>;
+}
+~~~
+
+***Exemplo:***
+
+Criar uma função que retorne o maior entre dois números passados por parâmetro.
+
+A) Pseudocódigo:
+
+~~~
+Função maior2n (int num1, int num2): inteiro
+Var
+  maior: inteiro
+Início
+  Se num1 > num2 então
+    maior = num1
+  senão 
+    maior = num2
+  fim_se
+  retornar (maior)
+Fim 
+
+Programa testando_funcao
+Var
+  n1, n2: inteiro
+Início
+  Escreva “Digite um número:”
+  Leia n1
+  Escreva “Digite outro número:”
+  Leia n2
+  Escreva “Maior número: ”, maior2n(n1, n2)
+Fim
+~~~
+
+B) Python:
+
+~~~python
+# Criação da função com parâmetro
+def maior2n (num1, num2):
+  if num1 > num2:
+    maior = num1
+  else:
+    maior = num2
+  return maior
+  
+# Programa principal
+n1 = int(input("Digite um número: "))
+n2 = int(input("Digite outro número: "))
+print("Maior numero: ", maior2n(n1,n2))
+~~~
+
+C) Java:
+
+~~~java
+// Criação da função
+public static intmaior2n(intnum1, intnum2) {
+  int maior;
+  
+  if (num1 > num2) {
+    maior = num1;
+  } else {
+    maior = num2;
+  }
+  return maior;  
+}
+
+// Programa principal
+public static void main (String[]args) {
+  Scanner teclado = new Scanner (System.in);
+  int n1, n2;
+  
+  System.out.println("Digite um número: ");
+  n1 = teclado.nextInt();
+  System.out.println("Digite outro número: ");
+  n2 = teclado.nextInt();
+  System.out.println("Maior numero = " + maior2n(n1,n2));}
+~~~
+
+### Exercício:
+
+Em uma instituição de ensino, um aluno é submetido a três avaliações em um semestre. 
+A média semestral é calculada por meio de uma média simples das duas maiores avaliações obtidas entre três avaliações. 
+- Caso essa média semestral resulte em uma nota inferior a 4, o aluno foi reprovado sem outra oportunidade. 
+- Caso a média semestral seja maior ou igual a 7, o aluno foi aprovado de forma direta.
+- Caso a média esteja entre 4 e 6.9, o aluno tem a oportunidade de fazer o exame por meio de uma nova avaliação.
+Considerando que o aluno está em exame, a média final é uma média simples da média semestral com a notada avaliação obtida no exame. 
+- Caso a média final seja inferior a 5, o aluno foi Reprovado em Exame, senão ele foi aprovado.
+Requisitos:
+- O algoritmo efetua todo esse cálculo com apenas um aluno.
+- Consistir as notas para que estejam entre 0 e 10.
+- As mensagens informativas devem ser claras em relação ao problema ou à situação do aluno.
+- Quando necessário, exibir as médias calculadas para simples conferência.
+
+A) Pseudocódigo da resolução estruturada:
+
+~~~
+Programa media_aluno
+  nota1, nota2, nota3, media_semestral: real
+  nota_exame, media_exame: real
+Início
+  Escreva “Nota 1:”
+  Leia nota1
+  Se nota1 >= 0 e nota1 <= 10 então
+    Leia nota2
+    Se nota2 >= 0 e nota2 <= 10 então
+      Leia nota3
+      Se nota3 >= 0 e nota3 <= 10 então
+        menor_nota = nota1
+        Se nota2 < menor_nota então
+          menor_nota = nota2
+        fim_se
+        Se nota3 < menor_nota então
+          menor_nota = nota3
+        fim_se
+        media_semestral = (nota1 + nota2 + nota3 – menor_nota)/2
+        Escreva “A sua média semestral é”, media_semestral
+        Se media_semestral < 4 então
+          Escreva “Você está reprovado direto”
+        Senão se media_semestral >= 7 então
+          Escreva “Você está aprovado direto”
+        Senão
+          Escreva “VOCÊ FICOU EM EXAME”
+          Leia nota_exame
+          Se nota_exame >= 0 e nota_exame <= 10 então
+            media_exame = (media_semestral + nota_exame) / 2
+            Se media_exame < 5 então
+              Escreva “Reprovado em exame com media”, media_exame
+            Senão
+              Escreva “Aprovado em exame com media”, media_exame
+            Fim_se
+          Senão
+            Escreva “Nota de exame”, nota_exame, “Inválida” 
+          Fim_se
+        Fim_se
+      Senão
+        Escreva “Nota 3”, nota3, “-É inválida”
+      Fim_Se
+    Senão
+      Escreva “Nota 2”, nota2, “-É inválida”
+    Fim_se
+  Senão
+    Escreva “Nota 1”, nota1, “-É inválida”
+  Fim_se
+Fim
+~~~
+
+B) Pseudocódigo, agora utilizando funções e procedimentos:
+
+1. Subalgoritmo utilizando uma função do tipo booleana; pega um parâmetro do tipo real que representa uma nota e retorna verdade, caso seja uma nota válida ou falso, caso não seja:
+
+~~~
+//Função que verifica se uma nota é válida
+Função nota_valida (nota: real): Lógica
+Início 
+  Se (nota >= 0 e nota <= 10) então 
+    retorne verdade
+  Então
+    retorne falso
+  Fim_se
+Fim
+~~~
+
+2. Subalgoritmo através de uma função do tipo real, que analisa três números passados por parâmetro e retorna o de menor valor.
+
+~~~
+//Função que retorna o menor entre 3 valores
+Função menor3n (n1: real, n2: real, n3: real): Real
+Var
+  menor: real
+Início
+  //Verifica qual a menor nota
+  menor = n1 
+  se (n2 < menor) então
+    menor = n2
+  fim_se
+  se (n3 < menor) então
+    menor = n3
+  fim_se
+  retorne menor
+Fim
+~~~
+
+3. Subalgoritmo que utiliza dentro dele a chamada de outra função “menor3n”. Essa função  chama  a  função  que  retorna  o  menor entre três valores antes de calcular a média (tirando a de menor valor).
+
+~~~
+//Função que retorna a média de 3 números
+função media2maiores (n1: real, n2: real, n3: real): real
+var
+  menor: real
+início
+  chamada de uma função dentro de outra
+  menor = menor3n(n1,n2,n3)
+  retorne(n1 + n2 + n3 - menor) / 2;
+Fim
+~~~
+
+4. Subalgoritmo que pega uma média passada por parâmetro e retorna uma mensagem incorporando a média:
+
+~~~
+// Procedimento que exibe a mensagem da media semestral
+Procedimento msg_media_semestral (m: real)
+Início
+  Escreva "A sua média semestral é ", m
+Fim
+~~~
+
+5. Função que pega dois números reais passados por parâmetro e retorna a média obtida:
+
+~~~
+// Função que calcula a média de dois números
+Função media2n(n1: real, n2: real): real
+Início 
+  retorne (n1 + n2) / 2
+Fim
+~~~
+
+6. Função que pega a média de exame passada por parâmetro e retorna um texto composto por uma combinação de texto (string) e um valor realque está no parâmetro:
+
+~~~
+// Função que retorna mensagem de aprovado ou não no exame
+Função msg_aprovado_exame (float m): Texto
+Início 
+  Se (m < 5) então
+    retorne ("Reprovado em exame com media " + m)
+  senão
+    retorne("Aprovado em exame com media " + m)
+  Fim_se
+Fim
+~~~
+
+**Pseudocódigo completo resultante:**
+
+~~~
+// Função que verifica se uma nota é válida
+Função nota_valida (nota: real): Lógica
+Início 
+  se (nota >= 0 e nota <= 10) então 
+    retornar verdade
+  senão
+    retornar falso
+  fim_se
+fim
+
+// Função que retorna o menor entre 3 valores
+Função menor3n (n1: real, n2: real, n3: real)
+Var
+  menor: real
+Inicio
+  // Verifica qual a menor nota
+  menor = n1
+  se (n2 < menor) então
+    menor = n2
+  fim_se
+  se (n3 < menor) então
+    menor = n3
+  fim_se
+  retornar menor
+Fim
+
+// Função que retorna a média de 3 números
+função media2maiores (n1: real, n2: real, n3: real): real
+var
+  menor: real
+início
+  // chamada de uma função dentro de outra
+  menor = menor3n(n1,n2,n3)
+  retornar (n1 + n2 + n3 - menor) / 2;
+Fim
+
+// Procedimento que exibe a mensagem da media semestral
+Procedimento msg_media_semestral (m: real)
+Início 
+  Escreva "A sua média semestral é ", m
+Fim
+
+// Função que retorna mensagem de aprovado ou não no exame
+função msg_aprovado_exame (float m): Texto
+Início 
+  Se (m < 5) então
+    retornar ("Reprovado em exame com media " + m)
+  Senão
+    retornar ("Aprovado em exame com media " + m)
+  Fim_se
+Fim
+
+// PROGRAMA PRINCIPAL
+Programa Principal 
+Var
+  nota1, nota2, nota3, media_semestral, nota_exame, media_exame, menor_nota: real
+Início
+  Escreva "Nota 1:"
+  Leia nota1
+  // chamada da função 'nota_valida'
+  Se (nota_valida(nota1)) então 
+    Escreva "Nota 2:"
+    Leia nota2 
+    Se (nota_valida(nota2))
+      Escreva "Nota 3:"
+      Leia nota3
+      Se (nota_valida(nota3)) então
+        // Chamadada função 'menor3n'
+        menor_nota = menor3n (nota1, nota2, nota3)
+        // chamada da função'media2maiores' que calcula a media descartando a menor
+        media_semestral = media2maiores (nota1, nota2, nota3
+        // chamada do procedimento que exibe a mensagem da media semestral
+        msg_media_semestral (media_semestral)
+        // Verifica o status do aluno
+        Se (media_semestral < 4)então
+          Escreva "Você está reprovado direto"
+        Senão se (media_semestral >= 7) então
+          Escreva “Você está aprovado direto")
+        Senão
+          // Solicita uma nota em caso de exame
+          Escreva "VOCÊ FICOU EM EXAME"
+          Leia nota_exame
+          Se (nota_valida(nota_exame)) então
+            // chamada da função media_exame que calcula a media
+            media_exame = media2n(media_semestral, nota_exame)
+            // chamadadafunçãomsg_aprovado_exame
+            Escrevamsg_aprovado_exame(media_exame)
+          Senão
+            Escreva "Nota de exame" + nota_exame + "Inválida"
+          Fim_se
+        Fim_se
+      Senão
+        Escreva "Nota 3 " + nota3 + " -É inválida"
+      Fim_se
+    Senão
+      Escreva “Nota 2 " + nota2 + " -É inválida"
+    Fim_se  
+  Senão
+    Escreva "Nota 1 " + nota1 + " -É inválida"
+  Fim_Se
+Fim
+~~~
+
+### Vetores:
+
+- Variáveis indexadas são aquelas em que podemos guardar várias informações e a sua manipulação é feita pelo índice, que fica entre  colchetes. 
+- O índice sempre inicia do 0 (zero) e vai até o limite do vetor.
+- Temos a variável indexada unidimensional (uma  linha  e  diversas  colunas), que é o vetor, e a bidimensional (diversas linhas e diversas colunas), que é a matriz. 
+- As variáveis indexadas são os conhecidos vetores e matrizes; também são conhecidas como listas ou até tuplas (vetor de constantes).
+- Como variáveis de memória, um vetor deve ter um nome e um tipo. A mudança fica na definição do tamanho do vetor, ou seja, a quantidade de elementos que ele terá.
+
+***Sintaxe:***
+
+A) Pseudocódigo:
+
+~~~
+vetor_exemplo[10] : inteiro
+~~~
+
+B) Python:
+
+~~~python
+vetor_exemplo = []
+~~~
+
+C) Java:
+
+~~~java
+int[] vetor_exemplo = new int [10];
+~~~
+
+***Manipulando vetores:***
+
+~~~
+//Atribui o valor 65 no índice 2 do vetor
+y[2] = 65
+
+// permite ao usuário digitar o elemento com índice 4
+Leia y[4]
+
+// Exibe o elemento do índice 0
+Escreva “Primeira posição do vetor”, y[0]
+
+// Efetua cálculos e atribuições
+y[3] = y[6] + y[7]
+
+// Verifica se um elemento é positivo
+Se y[5] > 0 então
+  Escreva “É positivo”
+Senão
+  Escreva “Não é positivo”
+Fim_se
+~~~
+
+***Importante:***
+
+Em Python, por ser uma linguagem mais dinâmica, trata o vetor (lista) de forma diferente das demais linguagens. Não é definido o  tamanho da lista inicialmente!!! 
+Sendo  assim, existem comandos específicos para tratar a lista:
+- O conteúdo dos elementos é heterogêneo, ou seja, cada célula pode ser de um tipo diferente (diferentemente das outras linguagens).
+- Os elementos são dinâmicos, ou seja, acrescentamos e excluímos quantos elementos quisermos.
+- O sinal de + concatena duas listas.
+- O comando *append* acrescenta um item no final da lista:
+  - lista.append(45) # acrescenta o elemento 45.
+- O *insert* permite editar um elemento:
+  - lista.insert(3,”Edson”) # coloca Edson no elemento representado pelo índice 3.
+- O *extended* acrescenta uma lista no final da outra:
+  - l1.extend(l2) # acrescenta a lista l2 no final da l1.
+- O *min()* e o *max()* retornam o menor e o maior item da lista, respectivamente: 
+  - print(min(l3),max(l3)) # exibe o menor e o maior item da lista l3.
+- O *pop* remove o último elemento da lista:
+  - lista.pop() # remove o último elemento da lista.
+- O *del* exclui um ou mais elementosda lista:
+  - del(lista	&#91;3&#93;) # remove o elemento com o índice 3.
+- O *clear* apaga todos os elementos da lista. 
+  - lista.clear()
+
+### Matrizes:
+
+Enquanto um vetor é uma variável unidimensional (1, N), a matriz é uma variável bidimensional (N, N), parecida com uma tabela. Na matriz, temos que referenciar também a linha! Sempre seguimos a ordem &#91;linha&#93; &#91;coluna&#93;.
+
+***Manipulando matrizes:***
+
+~~~
+// Atribui o valor 99 na linha com o índice 2 e coluna 1
+m[2][1] = 99
+
+// permite ao usuário digitar o elemento com índices 1 e 2
+Leia m[1][2]
+
+// Exibe o primeiro elemento da matriz
+Escreva “Primeira posição do vetor”, m[0][0]
+
+// Efetua cálculos e atribuições
+m[2][2] = m[1][1] * m[3][3]
+
+// Verifica se um elemento é positivo
+Se m[3][1] > 0 então
+  Escreva “É positivo”
+Senão
+  Escreva “Não é positivo”
+Fim_se
+~~~

@@ -3,14 +3,13 @@
 # Nivelamento: Lógica de Programação
 FIAP
 
-<a href="#cap01">Capítulo 1: Introdução</a> | 
-<a href="#cap02">Capítulo 2: Entrada e Saída de Dados</a> | 
-<a href="#cap03">Capítulo 3: Desvios Condicionais</a> | 
-<a href="#cap04">Capítulo 4: Laços de repetição</a> | 
-<a href="#cap05">Capítulo 5: Funções, procedimentos, vetores e matrizes</a> | 
-<a href="#cap06">Capítulo 6: </a>
-
 </div>
+
+<a href="#cap01">Capítulo 1: Introdução</a> <br>
+<a href="#cap02">Capítulo 2: Entrada e Saída de Dados</a> <br>
+<a href="#cap03">Capítulo 3: Desvios Condicionais</a> <br>
+<a href="#cap04">Capítulo 4: Laços de repetição</a> <br>
+<a href="#cap05">Capítulo 5: Funções, procedimentos, vetores e matrizes</a>
 
 <div id="cap01" align="center">
 <h2>📚 Capítulo 1: Introdução</h2>
